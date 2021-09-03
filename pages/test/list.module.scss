@@ -203,6 +203,10 @@
                 transition: all 0.85s !important;
                 box-shadow: var(--hover-glow) !important;
             }
+
+            @media only screen and (max-width: 400px) {
+                white-space: nowrap;
+            }
         }
     }
 
@@ -369,10 +373,10 @@
 
     .pageGrid {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 
-    .list{
+    .list {
         margin-bottom: 2.5rem;
     }
 }
@@ -393,10 +397,98 @@
 
     .pageGrid {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .card {
+        margin: 0 0;
+        width: 80%;
     }
 
-   
+    .list {
+        padding: 0rem !important;
+        width: 80%;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 18rem;
+    }
+
+    .pageGrid {
+        width: 18rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .card {
+        margin: 0 0;
+        width: 80%;
+    }
+
+    .list {
+        padding: 0rem !important;
+        width: 90%;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 18rem;
+    }
+
+    .pageGrid {
+        width: 18rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .card {
+        margin: 0 0;
+        width: 80%;
+    }
+
+    .list {
+        padding: 0rem !important;
+        width: 90%;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 16rem;
+    }
+
+    .pageGrid {
+        width: 16rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 }
 
 .listControl {
@@ -421,7 +513,7 @@
         grid-area: c;
         @extend .btn;
         margin: 0;
-        margin-left: auto;    
+        margin-left: auto;
     }
 
     @media only screen and (max-width: 900px) {

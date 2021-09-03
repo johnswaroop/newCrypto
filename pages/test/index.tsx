@@ -12,7 +12,7 @@ import next from 'next';
 import React from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
-
+import useResize from '@/utility/reSize.utility'
 
 const routes: string[] = [];
 
@@ -83,16 +83,25 @@ interface pageProps {
 
 
 const Page: FC<pageProps> = ({ index }) => {
+
+    const [width, height] = useResize();
+    let cards: any = [];
+    let size: number = 8;
+   
+    if (width < 900) {
+        size = 2;
+    }
+    else if (width < 1400) {
+        size = 4;
+    }
+
+    for (let i = 0; i < size; i++) {
+        cards.push(<Card />);
+    }
+
     return (
         <div className={styles.pageGrid}>
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            {cards}
         </div>
     )
 }
@@ -104,8 +113,9 @@ const Home: FC = () => {
     let sliderRef: any;
     const [currentPage, setCurrentPage] = useState<number>(0);
     const pages = [0, 1, 3, 4];
-
     const handleDragStart = (e: any) => e.preventDefault();
+
+
 
     const items = [<Page index={0} />, <Page index={0} />, <Page index={0} />];
 
@@ -145,12 +155,14 @@ const Home: FC = () => {
                                 mouseTracking items={items}
                                 disableDotsControls
                                 disableButtonsControls
-                                ref={(el) => (sliderRef = el)} />
+                                ref={(el) => (sliderRef = el)}
+                                onSlideChange={(e: any) => { console.log(e) }}
+                            />
                         </div>
                         <div className={styles.listControl}>
-                            <Button className={styles.btnPrev} color='primary' onClick={() => { sliderRef?.slidePrev()}} >Previous</Button>
+                            <Button className={styles.btnPrev} color='primary' onClick={() => { sliderRef?.slidePrev() }} >Previous</Button>
                             <p className={styles.pagination}>{`Displaying ${(currentPage * 8) + 1} to ${(currentPage * 8) + 8} of ${pages.length * 8} Presales`}</p>
-                            <Button className={styles.btnNext} color='primary' onClick={() => { sliderRef?.slideNext()}} >Next</Button>
+                            <Button className={styles.btnNext} color='primary' onClick={() => { sliderRef?.slideNext() }} >Next</Button>
                         </div>
                     </div>
                 </Content>
