@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+//dimensions
+$nav-height: 7vh;
+$content-heigth: (100vh - $nav-height);
+$spacer: 2rem;
+$panel-full-width: 55rem;
+$side-nav-width: 17rem;
+
+//font
+$font: 'Roboto';
+$highlight-text-color: var(--highlight-text-color); //global styles
+$text-color: var(--text-color);
+$placeholder-color: var(--placeholder-color);
+$bg-icon: var(--bg-icon);

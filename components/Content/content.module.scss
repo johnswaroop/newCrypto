@@ -1,0 +1,18 @@
+@import './../../scss/variables.scss';
+
+.content {
+    display: flex;
+    min-height: $content-heigth;
+    flex: auto;
+    background: var(--bg-gradient);
+    flex-direction: column;
+    align-items: center;
+    padding-top: $nav-height;
+    padding-left: 0;
+    position: relative;
+}
+
+.chips {
+    display: flex;
+    justify-content: space-between;
+}

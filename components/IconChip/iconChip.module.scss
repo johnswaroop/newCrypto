@@ -1,0 +1,51 @@
+@use "sass:math";
+
+@import './../../scss/variables';
+
+.iconChip {
+    display: flex;
+    width: max-content;
+    align-items: center;
+}
+
+.iconContainer {
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 100%;
+    border: 3px solid var(--border-icon);
+    padding: 0.5rem;
+    margin-right: math.div($spacer, 2.5);
+    background-color: $bg-icon;
+    user-select: none;
+    img {
+        object-fit: contain;
+        user-select: none;
+    }
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+   
+    p, h2 {
+        margin: 0;
+        padding: 0;
+    }
+
+    .title {
+        font-family: $font;
+        color: var(--highlight-text-color);
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: ($spacer*0.125);
+        user-select: none;
+    }
+
+    .value {
+        font-family: $font;
+        color: var(--text-color);
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+}

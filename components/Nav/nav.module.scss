@@ -1,0 +1,152 @@
+@import './../../scss/variables';
+
+.nav {
+    display: flex;
+    width: 100%;
+    height: $nav-height;
+    background: var(--bg-nav);
+    align-items: center;
+    position: fixed;
+    z-index: 9000;
+
+    @media only screen and (max-width: 910px) {
+        height: $nav-height;
+    }
+}
+
+.routes {
+    display: flex;
+    list-style: none;
+    font-family: $font;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 0;
+
+    li {
+        margin: 0 1.5rem;
+        cursor: pointer;
+    }
+
+    .activeRoute {
+        color: var(--highlight-text-color);
+    }
+
+    @media only screen and (max-width: 910px) {
+        li {
+            font-size: 1rem;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    margin: 0 1rem;
+    cursor: pointer;
+    margin-right: 0;
+
+    .logoIcon {
+        margin-right: 1vh;
+    }
+    
+    @media only screen and (max-width: 540px) {
+        .logoText {
+            display: none;
+        }
+    }
+}
+
+.navBtn {
+    height: 1rem;
+    object-fit: contain;
+    margin-left: 0.75rem;
+    cursor: pointer;
+}
+
+.walletBtn {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: var(--hover-glow) !important;
+    }
+
+    height: 2rem;
+    width: 10rem;
+    font-weight: 600 !important;
+    margin-right: 1rem !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 12px !important;
+
+    @media only screen and (max-width: 300px) {
+        font-size: 3.5vw !important;
+    }
+}
+
+.language {
+    width: 2rem;
+    height: 70%;
+    border: none;
+    background-color: var(--bg-panel);
+    margin: 0 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.darkModeIcon {
+    display: flex;
+    height: 2rem;
+    padding-left: 0.5rem;
+    margin-left: auto;
+    margin-right: 1.5rem;
+}
+
+.settings {
+    display: flex;
+    height: 2rem;
+    width: 2rem;
+    padding-left: 0.5rem;
+    margin-left: auto;
+    margin-right: 0.7rem;
+    cursor: pointer;
+
+}
+
+.setIcon {
+    transition: all 0.5s;
+}
+
+.dimmer {
+    display: flex;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: $nav-height;
+    flex-grow: 1;
+    height: $content-heigth;
+    width: 100%;
+
+    animation: appear 0.35s forwards ease-in-out;
+    
+    @media only screen and (max-width: 1420px) {
+        margin-top: $nav-height;
+        height: ($content-heigth);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        margin-left: 0;
+    }
+    to {
+        opacity: 1;
+        margin-left: $side-nav-width;
+    }
+}

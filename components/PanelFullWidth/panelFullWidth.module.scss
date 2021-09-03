@@ -1,0 +1,18 @@
+@import './../../scss/variables';
+
+.fullWidthPanel {
+    display: flex;
+    flex-direction: column;
+    width: $panel-full-width;
+    background: var(--bg-panel);
+    border: 6px solid var(--bg-panel);
+    box-sizing: border-box;
+    box-shadow: 10px 4px 50px 10px rgba(0, 0, 0, 0.19);
+    border-radius: 30px;
+    padding: $spacer;
+    box-sizing: border-box;
+
+    @media only screen and (max-width: 910px) {
+        width: 100%;
+    }
+}

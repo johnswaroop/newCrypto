@@ -1,0 +1,63 @@
+@import './../../scss/variables.scss';
+
+.toast {
+    position: absolute;
+    display: flex;
+    height: 3.5rem;
+    background-color: var(--bg-panel);
+    top: 4rem;
+    border-radius: 35px;
+    margin-right: 1rem;
+    right: 0;
+    z-index: 200;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    padding: 0 1rem;
+    padding-left: 0.75rem;
+
+    .imgCon {
+        display: flex;
+        height: min-content;
+        width: min-content;
+        box-shadow: 0 0 15px rgb(68, 196, 162);
+        border-radius: 100%;
+        img {
+            height: 1.7rem;
+            width: 1.7rem;
+        }
+    
+    }
+
+    .textCon {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+        margin-right: 2rem;
+
+        h4 {
+            font-family: $font;
+            font-size: 1rem;
+            margin: 0;
+            color: #3bb090;
+        }
+
+        p {
+            font-family: $font;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0;
+            color: #9E9E9E;
+        }
+    }
+
+    .closeToast {
+        position: absolute;
+        height: 1rem;
+        right: 0;
+        margin-left: auto;
+        margin-right: 1rem;
+        &:hover {
+            transform: scale(1.25);
+        }
+    }
+}

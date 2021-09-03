@@ -1,0 +1,136 @@
+@use "sass:math";
+
+@import './../../scss/variables';
+
+$pop-up-width: 40rem;
+$pop-up-height: auto;
+
+.popUpContainer {
+    display: flex;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.562);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: appear 0.5s forwards ease-in-out;
+    animation-delay: 0.5s;
+}
+
+.popUp {
+    display: flex;
+    flex-direction: column;
+    width: $pop-up-width;
+    height: $pop-up-height;
+    background-color: var(--bg-panel);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+
+    @media only screen and (max-width: 910px) {
+        width: 85vw;
+    }
+}
+
+.head {
+    display: flex;
+    width: 100%;
+    height: ($spacer * 3);
+    background-color: var(--bg-panel);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 0 $spacer;
+    padding-top: $spacer;
+    padding-bottom: math.div($spacer, 3);
+    box-sizing: border-box;
+    align-items: center;
+
+    .icon {
+        object-fit: contain;
+        height: 90%;
+    }
+
+    .title {
+        font-family: $font;
+        color: var(--highlight-text-color);
+        margin-left: 1rem;
+        font-weight: 500;
+        font-size: 1.75rem;
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: $spacer;
+    font-family: $font;
+    line-height: 150%;
+    color: var(--text-color);
+    
+    p {
+        margin: 0;
+    }
+
+    @media only screen and (max-width: 910px) {
+        p{
+            font-size: 0.8rem
+        }
+    }
+}
+
+.footer {
+    @extend .head;
+    margin-top: auto;
+    padding: 0 $spacer;
+    padding-bottom: math.div($spacer, 2.5);
+    padding-top: math.div($spacer, 3);
+
+    span {
+        font-family: $font;
+        color: var(--text-color);
+        font-size: 1rem;
+    }
+
+    button {
+        transition: all 0.5s;
+        background-color: var(--bg-panel) !important;
+        border: 2.95px solid var(--btn-border) !important;
+        text-transform: capitalize !important;
+        color: var(--btn-color) !important;
+        box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+
+        @media only screen and (max-width: 910px) {
+            width: 30%;
+        }
+
+        &:hover {
+            transition: all 0.85s !important;
+            box-shadow: var(--hover-glow) !important;
+        }
+
+        width: 7rem;
+        height: 2.5rem !important;
+        border-radius: 30px !important;
+        font-size: 1rem !important;
+        font-weight: 600 !important;
+        padding: 0rem 1rem;
+        margin-left: auto;    
+        border-radius: 30px;
+        padding: ($spacer*0.25) $spacer;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,130 @@
+@import './../../scss/variables.scss';
+
+$padding: 4rem;
+$btnWidth :10rem;
+
+.terms {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    border-radius: 15px;
+    background-color: var(--bg-panel);
+    box-shadow: 10px 4px 50px 10px rgba(0, 0, 0, 0.19);
+    margin: auto;
+
+    @media only screen and (max-width: 910px) {
+        width: 90vw;
+        margin-top: 2rem;
+        margin-bottom: 2rem ;
+    }
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    margin-top: $padding;
+
+    h1 {
+        font-family: $font;
+        margin: 0;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--highlight-text-color);
+        @media only screen and (max-width: 910px) {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media only screen and (max-width: 910px) {
+       margin-top: 2.5rem;
+       margin-bottom: 1rem;
+    }
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    margin: 0 $padding;
+    margin-top: 1.25rem;
+    overflow-y: auto;
+    height: 30rem;
+    margin-bottom: 3rem;
+
+    p {
+        color: var(--bw-text);
+        font-family: $font;
+        font-weight: 300;
+        line-height: 150%;
+        width: 60%;
+        text-align: center;
+        color: var(--text-color);
+
+        @media only screen and (max-width: 910px) {
+            font-size: 0.8rem;
+            width: 100%;
+        }
+
+        margin: 0 auto;
+        
+    }
+
+    @media only screen and (max-width: 910px) {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+}
+
+.action {
+    margin-top: 2rem;
+    display: flex;
+    margin: 0 $padding;
+    margin-bottom: 3rem;
+    gap: 5rem;
+    margin-top: auto;
+    justify-content: center;
+
+    @media only screen and (max-width: 910px) {
+        gap: 1rem;
+    }
+}
+
+.submitBtnNew {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    font-size: 1.25rem !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    height: 2.4rem;
+    width: $btnWidth;
+    font-weight: 550 !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: var(--hover-glow) !important;
+    }
+}
+
+.submitBtnNewRed {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid rgb(252, 106, 106) !important;
+    font-size: 1.25rem !important;
+    text-transform: capitalize !important;
+    color: rgb(252, 106, 106)  !important;
+    height: 2.4rem;
+    width:$btnWidth;
+    font-weight: 550 !important;
+
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: 0 0 15px rgb(252, 106, 106) !important;
+    }
+}

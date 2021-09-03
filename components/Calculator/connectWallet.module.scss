@@ -1,0 +1,226 @@
+@use "sass:math";
+
+@import './../../scss/variables';
+
+$pop-up-width: 40rem;
+$pop-up-height: auto;
+
+.popUpContainer {
+    display: flex;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.562);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: appear 0s forwards ease-in-out;
+    animation-delay: 0.5s;
+    z-index: 10000;
+}
+
+.popUp {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    background-color: var(--bg-panel);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.head {
+    display: flex;
+    width: 100%;
+    height: ($spacer * 3);
+    background-color: var(--bg-panel);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 0 $spacer;
+    padding-top: $spacer;
+    padding-bottom: math.div($spacer, 3);
+    box-sizing: border-box;
+    align-items: center;
+    
+    .icon {
+        object-fit: contain;
+        height: 90%;
+    }
+
+    .title {
+        font-family: $font;
+        color: var(--highlight-text-color);
+        margin-left: 1rem;
+        font-weight: 500;
+        font-size: 1.75rem;
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: $spacer;
+    font-family: $font;
+    line-height: 150%;
+    color: var(--text-color);
+    p {
+        margin: 0;
+    }
+}
+
+.header {
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    background-color: var(--bg-panel);
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.09);
+    align-items: center;
+    p {
+        margin: 0;
+        font-family: $font;
+        color: var(--highlight-text-color);
+        font-size: 1rem;
+        font-weight: 400;
+        margin-left: 1.5rem;
+    }
+}
+
+.body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    img {
+        height: 4.5rem;
+    }
+}
+
+.iconCon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    p {
+        font-family: $font;
+        color: var(--bw-text);
+    }
+}
+
+.footer {
+    @extend .head;
+    margin-top: auto;
+    padding: 0 $spacer;
+    padding-bottom: math.div($spacer, 2.5);
+    padding-top: math.div($spacer, 3);
+
+    span {
+        font-family: $font;
+        color: var(--text-color);
+        font-size: 1rem;
+    }
+
+    button {
+        margin-left: auto;
+        background-color: var(--bg-panel);
+        border: 3px solid var(--border-color);
+        border-radius: 30px;
+        font-size: 1.2rem;
+        color: var(--highlight-text-color);
+        padding: ($spacer*0.25) $spacer;
+        box-shadow: 0 0 15px rgb(211, 211, 211);
+        font-weight: 600;
+    }
+}
+
+.switchInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    padding-top: 0;
+
+    .sTitle {
+        font-family: $font;
+        margin-top: 0.5rem;
+        color: var(--bw-text);
+        margin-bottom: 0.5rem;
+    }
+
+    .switchBtnOff {
+        display: flex;
+        width: 4.5rem;
+        height: 1.95rem;
+        border-radius: 50px;
+        background-color: #ff7979;
+        align-items: center;
+        padding: 0 0.2rem;
+        cursor: pointer;
+    }
+
+    .switchBtnOn {
+        display: flex;
+        width: 4.5rem;
+        height: 1.95rem;
+        border-radius: 50px;
+        background-color: #048e6d;
+        align-items: center;
+        padding: 0 0.2rem;
+        cursor: pointer;
+    }
+
+    .sCircle {
+        display: flex;
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: white;
+        border-radius: 100%;
+    }
+
+    .state {
+        display: flex;
+        font-family: $font;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        p {
+            color: white;
+            margin: 0 auto;
+        }
+    }
+}
+
+.textSwitch {
+    display: flex;
+    font-family: $font;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 0.5px solid rgba(146, 146, 146, 0.637);
+    border-radius: 50px;
+    margin-bottom: 1rem;
+
+    input {
+        margin: 0 1rem;
+        color: var(--bw-text);
+        background-color: transparent;
+        border: none;
+        font-size: 1rem;
+        &:focus{
+            outline: none;
+        }
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

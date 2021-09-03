@@ -1,0 +1,15 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231 254" width="231" height="254">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #11ae87 }
+		.shp1 { fill: #1be2ae }
+	</style>
+	<g>
+		<g>
+			<path class="shp0" d="M59.77 136.08L97.35 253.5L0.72 136.08L59.77 136.08ZM171.81 118L134.23 0.59L230.85 118L171.81 118Z" />
+			<path class="shp0" d="M155.72 127.04L115.79 251.79L75.86 127.04L115.79 2.29L155.72 127.04Z" />
+			<path class="shp1" d="M59.77 118L0.72 118L97.35 0.59L59.77 118Z" />
+			<path class="shp1" d="M171.81 136.08L230.85 136.08L134.23 253.5L171.81 136.08Z" />
+		</g>
+	</g>
+</svg>

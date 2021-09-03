@@ -1,0 +1,250 @@
+@use "sass:math";
+
+@import './../../scss/variables';
+
+$pop-up-width: 40rem;
+$pop-up-height: auto;
+
+.popUpContainer {
+    display: flex;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.562);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: appear 0s forwards ease-in-out;
+    animation-delay: 0.5s;
+    z-index: 10000;
+}
+
+.popUp {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    background-color: var(--bg-panel);
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+
+    @media only screen and (max-width: 910px) {
+        width: 90vw;
+    }
+}
+
+.head {
+    display: flex;
+    width: 100%;
+    height: ($spacer * 3);
+    background-color: var(--bg-panel);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 0 $spacer;
+    padding-top: $spacer;
+    padding-bottom: math.div($spacer, 3);
+    box-sizing: border-box;
+    align-items: center;
+
+    .icon {
+        object-fit: contain;
+        height: 90%;
+    }
+
+    .title {
+        font-family: $font;
+        color: var(--highlight-text-color);
+        margin-left: 1rem;
+        font-weight: 500;
+        font-size: 1.75rem;
+    }
+}
+
+.content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: $spacer;
+    font-family: $font;
+    line-height: 150%;
+    color: var(--text-color);
+    p {
+        margin: 0;
+    }
+}
+
+.header {
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    background-color: var(--bg-panel);
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.09);
+    align-items: center;
+    p {
+        margin: 0;
+        font-family: $font;
+        color: var(--highlight-text-color);
+        font-size: 1rem;
+        font-weight: 400;
+        margin-left: 1.5rem;
+    }
+}
+
+.body {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    img {
+        height: 4.5rem;
+    }
+}
+
+.minMax {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .min {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 4rem;
+        padding: 0 0.5rem;
+        width: 8rem;
+        border-radius: 15px;
+        background-color: rgba(128, 128, 128, 0.125);
+
+        p {
+            font-family: $font;
+            color: var(--bw-text);
+            margin: 0;
+            margin-top: 0.5rem;
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            margin-top: 0.5rem;
+
+            h3 {
+                margin: 0;
+                font-family: $font;
+                color: var(--bw-text);
+            }
+
+            img {
+                height: 0.9rem;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
+
+.counter {
+    display: flex;
+    height: 3rem;
+    width: 10rem;
+    border: 2px solid gray;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        height: 0.3rem;
+        margin: 0 auto;
+        
+        &:hover {
+            transform: scale(1.25);
+        }
+
+        &:hover {
+            transform: scale(0.9);
+        }
+    }
+
+    .plus {
+        height: 1rem;
+    }
+}
+
+.center {
+    display: flex;
+    width: 33.3%;
+    height: 100%;
+    border-left: 2px solid gray;
+    border-right: 2px solid gray;
+    align-items: center;
+    justify-content: center;
+    p {
+        margin: 0;
+        font-size: 1.25rem;
+        font-family: $font;
+        color: var(--bw-text);
+    }
+}
+.sec2 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 1.5rem 0;
+}
+
+.sec3 {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.submitBtnNew {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    font-size: 1.25rem !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    height: 2.8rem;
+    width: 6rem;
+    font-weight: 550 !important;
+
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: var(--hover-glow) !important;
+    }
+}
+
+.submitBtnNewRed {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid rgb(241, 47, 47) !important;
+    font-size: 1.25rem !important;
+    text-transform: capitalize !important;
+    color: rgb(241, 47, 47) !important;
+    height: 2.8rem;
+    width: 6rem;
+    font-weight: 550 !important;
+
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 15px !important;
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: 0 0 15px rgb(241, 47, 47) !important;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
