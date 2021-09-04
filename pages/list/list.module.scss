@@ -1,30 +1,10 @@
-@import './../../scss/variables.scss';
-
-.list {
-    display: flex;
-    overflow: hidden;
-    background-color: var(--bg-panel-grey);
-    border-radius: 30px;
-    flex-direction: column;
-    padding: 1.5rem 1rem 0.5rem;
-    box-shadow: 0px 0px 15px rgba(47, 47, 47, 0.25);
-    margin-top: 0.95rem;
-    width: 81.5rem;
-
-    @media only screen and (max-width: 520px) {
-        width: 20rem;
-        padding: 1.5rem 0.5rem;
-        margin-top: 1rem;
-        margin-bottom: 3rem;
-        margin-top: 2rem;
-    }
-}
+@import "./../../scss/variables.scss";
 
 .listHeader {
     p {
         font-family: $font;
     }
-    @media only screen and (max-width: 520px) {
+    @media only screen and (max-width: 900px) {
         p {
             font-size: 0.7rem;
         }
@@ -38,8 +18,8 @@
     text-transform: capitalize !important;
     color: var(--btn-color) !important;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
-   
-    @media only screen and (max-width: 520px) {
+
+    @media only screen and (max-width: 900px) {
         width: 100%;
     }
 
@@ -63,7 +43,7 @@
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     overflow: hidden;
-    margin: 0 1.7rem;
+    margin: 0 0;
     flex-direction: column;
     box-sizing: border-box;
 
@@ -104,8 +84,8 @@
             margin: 0.5rem 0;
 
             grid-template-areas:
-                'key key'
-                'value icon';
+                "key key"
+                "value icon";
 
             p {
                 margin: 0;
@@ -216,28 +196,22 @@
             font-family: $font;
             font-size: 0.7rem !important;
             font-weight: 500 !important;
-            padding: 0.25rem 0.75rem; 
+            padding: 0.25rem 0.75rem;
             border: 2.25px solid var(--btn-border) !important;
 
             &:hover {
                 transition: all 0.85s !important;
                 box-shadow: var(--hover-glow) !important;
             }
+
+            @media only screen and (max-width: 400px) {
+                white-space: nowrap;
+            }
         }
     }
 
     @media only screen and (max-width: 520px) {
         margin-bottom: 1.5rem;
-    }
-}
-
-.rowCard {
-    display: flex;
-    width: max-content;
-    margin: 0.7rem 0;
-
-    @media only screen and (max-width: 520px) {
-        flex-direction: column;
     }
 }
 
@@ -262,25 +236,17 @@
         font-weight: 600;
         color: var(--highlight-text-color);
 
-        @media only screen and (max-width: 520px) {
+        @media only screen and (max-width: 900px) {
             display: none;
         }
     }
-}
-
-.listControl {
-    display: flex;
-    margin-top: 0.75rem;
-    flex-grow: 1;
-    padding: 0 1.25rem;
-    justify-content: space-between;
 }
 
 .inputSearch {
     @extend .input;
     width: 15rem !important;
 
-    @media only screen and (max-width: 520px) {
+    @media only screen and (max-width: 900px) {
         width: 5rem !important;
         margin-left: 0 !important;
 
@@ -293,7 +259,7 @@
 .inputSelect {
     @extend .input;
 
-    @media only screen and (max-width: 520px) {
+    @media only screen and (max-width: 900px) {
         width: 5rem !important;
     }
 
@@ -357,7 +323,7 @@
         background-color: var(--border-color);
         box-sizing: border-box;
         margin: 0 1rem;
-        
+
         span {
             display: flex;
             width: 100%;
@@ -368,31 +334,250 @@
     }
 }
 
-.pagination {
-    font-family: $font;
-    color: var(--highlight-text-color);
+.list {
+    display: flex;
+    overflow: hidden;
+    background-color: var(--bg-panel-grey);
+    border-radius: 30px;
+    flex-direction: column;
+    padding: 1.5rem 1rem 0.5rem;
+    box-shadow: 0px 0px 15px rgba(47, 47, 47, 0.25);
+    margin-top: 0.95rem;
+    margin-bottom: 1rem;
+}
 
-    @media only screen and (max-width: 520px) {
-        position: absolute;
-        bottom: 3.8%;
-        margin: 0 auto;
-        margin-left: 2rem;
-        font-size: 0.9rem;
+.content {
+    display: flex;
+    width: 100%;
+    width: 80rem;
+}
+
+.pageGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 2rem;
+    margin: 1rem 0;
+    width: 80rem;
+    justify-items: center;
+}
+
+@media only screen and (max-width: 1400px) {
+    .content {
+        width: 65rem;
+    }
+
+    .pageGrid {
+        width: 65rem;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .list {
+        margin-bottom: 2.5rem;
     }
 }
 
-.listContent {
-    transition: all 0.7s;
-    display: flex;
-    flex-direction: column;
+@media only screen and (max-width: 1200px) {
+    .content {
+        width: 40rem;
+        margin: 0 auto;
+    }
+
+    .pageGrid {
+        width: 40rem;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .list {
+        margin-bottom: 2.5rem;
+    }
 }
 
-.slider {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
 
-    @media only screen and (max-width: 520px) {
-        padding-right: 0.5rem;
+@media only screen and (max-width: 900px) {
+    .card {
+        margin: 0 0;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 40rem;
+    }
+
+    .pageGrid {
+        width: 40rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .card {
+        margin: 0 0;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 20rem;
+    }
+
+    .pageGrid {
+        width: 20rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .card {
+        margin: 0 0;
+        width: 80%;
+    }
+
+    .list {
+        padding: 0rem !important;
+        width: 80%;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 18rem;
+    }
+
+    .pageGrid {
+        width: 18rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .card {
+        margin: 0 0;
+        width: 80%;
+    }
+
+    .list {
+        padding: 0rem !important;
+        width: 90%;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 18rem;
+    }
+
+    .pageGrid {
+        width: 18rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .card {
+        margin: 0 0;
+        width: 80%;
+    }
+
+    .list {
+        padding: 0rem !important;
+        width: 90%;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 16rem;
+    }
+
+    .pageGrid {
+        width: 16rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+}
+
+.listControl {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "a b c";
+    margin: 0 1rem;
+    .pagination {
+        grid-area: b;
+        font-family: $font;
+        color: var(--highlight-text-color);
+        justify-self: center;
+    }
+
+    .btnPrev {
+        grid-area: a;
+        margin: 0;
+        @extend .btn;
+
+        @media only screen and (max-width: 350px) {
+         transform: scale(0.7); 
+        }
+    }
+
+    .btnNext {
+        grid-area: c;
+        @extend .btn;
+        margin: 0;
+        margin-left: auto;
+        @media only screen and (max-width: 350px) {
+            transform: scale(0.7); 
+           }
+    }
+
+    @media only screen and (max-width: 900px) {
+        margin-bottom: 2rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 1fr 1fr;
+        grid-template-areas:
+            "b b"
+            "a c";
     }
 }

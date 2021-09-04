@@ -18,4 +18,8 @@
     @media only screen and (max-width: 910px) {
         width:100%;
     }
+
+    @media only screen and (max-width: 300px) {
+        padding: 0.5rem;
+    }
 }

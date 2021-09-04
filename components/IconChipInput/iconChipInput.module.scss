@@ -50,6 +50,10 @@
         font-size: 0.9rem;
         font-weight: 600;
         margin-bottom: ($spacer*0.125);
+
+        @media only screen and (max-width: 300px) {
+            font-size: 0.75rem;
+        }
         
     }
 

@@ -71,6 +71,8 @@
     color: var(--btn-color) !important;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
     border-radius: 15px !important;
+    
+    white-space: nowrap;
 
     &:hover {
         transition: all 0.85s !important;

@@ -9,6 +9,10 @@ import { Button } from '@material-ui/core';
 import Calculator from '@/components/Calculator';
 import Link from 'next/link';
 import next from 'next';
+import React from 'react';
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
+import useResize from '@/utility/reSize.utility'
 
 const routes: string[] = [];
 
@@ -73,25 +77,37 @@ const Card: FC = () => {
 }
 
 interface pageProps {
-    index: number;
+    index: number
 }
 
-const Page: FC<pageProps> = ({ index }) => {
-    return (
-        <div className={styles.listContent} id={'lc' + index}>
-            <div className={styles.rowCard}>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-            </div>
 
-            <div className={styles.rowCard}>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-            </div>
+
+const Page: FC<pageProps> = ({ index }) => {
+
+    const [width, height] = useResize();
+    let cards: any = [];
+    let size: number = 8;
+   
+    if (width <= 700) {
+        size = 2;
+    }
+    else if (width <= 900) {
+        size = 4;
+    }
+    else if (width <= 1200) {
+        size = 4;
+    }
+    else if (width <= 1400) {
+        size = 6;
+    }
+
+    for (let i = 0; i < size; i++) {
+        cards.push(<Card />);
+    }
+
+    return (
+        <div className={styles.pageGrid}>
+            {cards}
         </div>
     )
 }
@@ -100,25 +116,14 @@ const Home: FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(!false);
     const [isWalletVisible, setIsWalletVisible] = useState<boolean>(false);
     const [isCalculatorVisible, setIsCalculatorVisible] = useState<boolean>(false);
-
+    let sliderRef: any;
     const [currentPage, setCurrentPage] = useState<number>(0);
     const pages = [0, 1, 3, 4];
+    const handleDragStart = (e: any) => e.preventDefault();
 
-    const nextPage = () => {
-        if (currentPage < pages.length - 1) {
-            let page: any = document.querySelector('#lc0');
-            page.style.marginLeft = `${-(currentPage + 1) * 100}%`;
-            setCurrentPage(c => ++c);
-        }
-    }
 
-    const prevPage = () => {
-        if (currentPage > 0) {
-            let page: any = document.querySelector('#lc0');
-            page.style.marginLeft = `${-(currentPage - 1) * 100}%`;
-            setCurrentPage(c => --c);
-        }
-    }
+
+    const items = [<Page index={0} />, <Page index={0} />, <Page index={0} />];
 
     return (
         <>
@@ -151,25 +156,19 @@ const Home: FC = () => {
                                 <span className={styles.customBorder} />
                             </span>
                         </div>
-
-                        <div className={styles.slider}>
-                            {
-                                pages.map((page, i) => {
-                                    return (<Page key={i} index={i} />)
-                                })
-                            }
+                        <div className={styles.content}>
+                            <AliceCarousel
+                                mouseTracking items={items}
+                                disableDotsControls
+                                disableButtonsControls
+                                ref={(el) => (sliderRef = el)}
+                                onSlideChange={(e: any) => { console.log(e) }}
+                            />
                         </div>
-
                         <div className={styles.listControl}>
-                            <Button className={styles.btn}
-                                style={!(currentPage > 0) ? { filter: 'brightness(0.5)' } : {}}
-                                disabled={(currentPage > 0) ? false : true} color='primary' onClick={prevPage}>Previous</Button>
-
+                            <Button className={styles.btnPrev} color='primary' onClick={() => { sliderRef?.slidePrev() }} >Previous</Button>
                             <p className={styles.pagination}>{`Displaying ${(currentPage * 8) + 1} to ${(currentPage * 8) + 8} of ${pages.length * 8} Presales`}</p>
-
-                            <Button className={styles.btn}
-                                style={!(currentPage < pages.length - 1) ? { filter: 'brightness(0.5)' } : {}}
-                                disabled={(currentPage < pages.length - 1) ? false : true} color='primary' onClick={nextPage}>Next</Button>
+                            <Button className={styles.btnNext} color='primary' onClick={() => { sliderRef?.slideNext() }} >Next</Button>
                         </div>
                     </div>
                 </Content>

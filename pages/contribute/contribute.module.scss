@@ -3,9 +3,15 @@
 .contribute {
     display: flex;
     margin-top: 8rem;
-    transform: scale(1.25);
+    transform: scale(1.1);
 
     @media only screen and (max-width: 910px) {
+        flex-direction: column;
+        transform: scale(1);
+        margin-top: 4rem;
+    }
+
+    @media only screen and (max-width: 1400px) {
         flex-direction: column;
         transform: scale(1);
         margin-top: 4rem;
@@ -64,6 +70,13 @@
     margin: 0 1.5rem;
     flex-direction: column;
     box-sizing: border-box;
+    
+    @media only screen and (max-width: 1400px) {
+        width: 40rem;
+        margin: 0 auto;
+        margin-top: 1.5rem;
+
+    }
 
     @media only screen and (max-width: 910px) {
         width: 80vw;
@@ -135,7 +148,7 @@
                 margin-left: 0.25rem;
             }
 
-            @media only screen and (max-width: 910px) {
+            @media only screen and (max-width: 700px) {
                 p {
                     font-size: 0.6rem;
                 }
@@ -156,7 +169,7 @@
         .rowDate {
             @extend .row;
 
-            @media only screen and (max-width: 910px) {
+            @media only screen and (max-width: 700px) {
                 flex-direction: column;
 
                 .stat {
@@ -261,7 +274,7 @@
             }
         }
 
-        @media only screen and (max-width: 910px) {
+        @media only screen and (max-width: 700px) {
             p {
                 font-size: 0.95rem;
             }
@@ -401,6 +414,10 @@
             img {
                 height: 1.5rem;
             }
+
+            p{
+                font-size: 0.7rem;
+            }
         }
     }
 }
@@ -412,6 +429,12 @@
     background-color: var(--bg-panel);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 15px;
+   
+    @media only screen and (max-width: 1400px) {
+        height: 40rem;
+        width: 40rem;
+        margin: 2rem auto;
+    }
 
     @media only screen and (max-width: 910px) {
         height: 40rem;
@@ -454,8 +477,14 @@
     flex-direction: column;
     border-radius: 15px;
 
-    @media only screen and (max-width: 910px) {
-        width: 80vw;
+    @media only screen and (max-width: 1400px) {
+        width: 40rem;
+        height: max-content;
         margin: 0 auto;
     }
+
+    @media only screen and (max-width: 910px) {
+        width: 80vw;
+    }
+
 }

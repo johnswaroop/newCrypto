@@ -1,0 +1,611 @@
+@import './../../scss/variables.scss';
+
+.manage {
+    display: flex;
+    margin-top: 3rem;
+    overflow: hidden;
+    background-color: var(--bg-panel);
+    border-radius: 30px;
+    flex-direction: column;
+    width: max-content;
+
+    @media only screen and (max-width: 1080px) {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-manage-header);
+
+    h1 {
+        font-size: 1.25rem;
+        font-family: $font;
+        color: var(--highlight-text-color);
+        font-weight: 400;
+    }
+}
+
+.form {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    padding: 1.5rem 1.5rem;
+    flex-direction: column;
+
+    @media only screen and (max-width: 1080px) {
+        padding: 1rem;
+    }
+
+    @media only screen and (max-width: 490px) {
+        padding: 1rem 0rem;
+    }
+}
+
+.row {
+    display: flex;
+}
+
+.rowToken {
+    @extend .row;
+}
+
+.panel2 {
+    @media only screen and (max-width: 1080px) {
+        margin-top: 1rem !important;
+    }
+}
+
+.manageRowOne {
+    @extend .row;
+    justify-content: space-between;
+    @media only screen and (max-width: 1080px) {
+        flex-direction: column;
+    }
+}
+
+.panel {
+    background-color: var(--bg-manage-panel);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    padding: 1rem 1.75rem;
+    z-index: 100;
+}
+
+.panelTitle {
+    font-family: $font;
+    color: var(--highlight-text-color);
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.panel1 {
+    @extend .panel;
+    margin: 0 0.5rem;
+}
+
+.panel2 {
+    @extend .panel;
+    margin: 0 0.5rem;
+}
+
+.presaleRow {
+    display: flex;
+    @media only screen and (max-width: 1080px) {
+        flex-direction: column;
+    }
+}
+
+.panel3 {
+    background-color: var(--bg-manage-panel);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem 1.25rem;
+    margin: 0 0.5rem;
+    margin-top: 1.25rem;
+}
+
+.panel4 {
+    @extend .panel3;
+    margin: 1rem 0.5rem;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    font-family: $font;
+    padding: 0.75rem;
+    padding-left: 0;
+}
+
+.key {
+    margin: 0;
+    font-size: 0.75rem;
+    color: var(--text-color);
+    font-weight: 400;
+    font-family: $font;
+}
+
+.value {
+    margin: 0;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    color: var(--bw-text);
+    font-size: 0.95rem;
+    font-family: $font;
+}
+
+.colLeft {
+    min-width: 9rem;
+}
+
+.valueLink {
+    @extend .value;
+    margin: 0;
+    user-select: text;
+    @media only screen and (max-width: 1080px) {
+        font-size: 0.8rem;
+    }
+}
+
+.panelHead {
+    display: flex;
+    padding: 0.7rem 1rem;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+
+    img {
+        height: 2rem;
+    }
+
+    h3 {
+        margin: 0;
+        margin-left: 1.5rem;
+        font-family: $font;
+        font-weight: 500;
+    }
+
+    .arrow {
+        transition: all 0.3s;
+        display: flex;
+        height: 0.75rem;
+        margin-left: auto;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .arrowReverse {
+        @extend .arrow;
+        transition: all 0.7s;
+        transform: rotate(180deg);
+    }
+}
+
+.panelBody {
+    box-sizing: border-box;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    padding: 0;
+    margin: 0;
+    width: 105%;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    padding: 1rem 1.25rem;
+    animation: expand 0.7s ease-out forwards;
+}
+
+.copyBtn {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: var(--hover-glow) !important;
+    }
+
+    width: 1vh;
+    left: 1vh;
+    height: 1.2rem !important;
+    border-radius: 30px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    padding: 0rem 1rem;
+}
+
+.btn {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid var(--btn-border) !important;
+    text-transform: capitalize !important;
+    color: var(--btn-color) !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+
+    @media only screen and (max-width: 1080px) {
+        width: 30%;
+    }
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: var(--hover-glow) !important;
+    }
+
+    width: 6.5rem;
+    height: 2.5rem !important;
+    border-radius: 30px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 0rem 1rem;
+}
+
+.btnRed {
+    transition: all 0.5s;
+    background-color: var(--bg-panel) !important;
+    border: 2.95px solid rgb(221, 60, 60) !important;
+    text-transform: capitalize !important;
+    color: red !important;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15) !important;
+
+    @media only screen and (max-width: 1080px) {
+        width: 30%;
+    }
+
+    &:hover {
+        transition: all 0.85s !important;
+        box-shadow: 0 0 18px rgb(235, 63, 63) !important;
+    }
+
+    width: 6.5rem;
+    height: 2.5rem !important;
+    border-radius: 30px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    padding: 0rem 1rem;
+}
+
+.depositToken {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .value {
+        margin: 0;
+        margin-right: auto;
+    }
+
+    .valueWallet {
+        @extend .value;
+    }
+
+    @media only screen and (max-width: 1080px) {
+        flex-direction: column;
+        flex-shrink: 1;
+        align-items: center;
+
+        .btn, .btnRed {
+            width: 100%;
+        }
+
+        .value {
+            display: flex;
+            width: 60vw;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .valueWallet {
+            text-align: center;
+            width: 60vw;
+            margin-left: 0;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.finalize {
+    @media only screen and (max-width: 1080px) {
+        .btn, .btnRed {
+            margin: 0.9rem 0;
+        }
+    }
+}
+
+.shareLink {
+    @extend .depositToken;
+
+    p {
+        line-height: 150%;
+        margin: 0.15rem 1rem;
+    }
+
+    @media only screen and (max-width: 1080px) {
+        p {
+            margin: 0 !important;
+        }
+    }
+}
+
+.finalize {
+    @extend .shareLink;
+    padding-top: 0.5rem;
+
+    @media only screen and (max-width: 1080px) {
+        flex-direction: column;
+    }
+
+    .btn, .btnRed {
+        margin-left: auto;
+        margin-right: 2rem;
+    }
+    
+    h5 {
+        font-family: $font;
+        font-size: 1.25rem;
+        margin: 0;
+        color: crimson;
+    }
+}
+
+.optional {
+    @extend .depositToken;
+    
+    padding: 1.5rem 0;
+    width: 100%;
+    display: flex;
+    border-bottom: 3px solid var(--bg-nav);
+
+    @media only screen and (max-width: 1080px) {
+        padding: 0;
+        width: 95%;
+    }
+
+    .logoLarge {
+        display: flex;
+        position: relative;
+        margin-left: auto;
+        margin-right: 1rem;
+
+        @media only screen and (max-width: 1080px) {
+            margin: 1.5rem auto;
+        }
+    }
+
+    img {
+        height: 4.5rem;
+        background-color: white;
+        border-radius: 100%;
+        border: 4.5px solid var(--border-color);
+        padding: 0.75rem;
+    }
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 40rem;
+
+    @media only screen and (max-width: 1080px) {
+        width: 65vw;
+    }
+
+    input {
+        border: none;
+        padding: 0;
+        box-sizing: border-box;
+        height: 90%;
+        font-family: $font;
+        width: 100%;
+        font-size: 1.2rem;
+        color: var(--highlight-text-color);
+        margin: 0 1.25rem;
+        background: transparent;
+        outline: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--placeholder-color);
+        }
+    }
+
+    .customBorder {
+        display: flex;
+        width: 100%;
+        height: 4px;
+        margin-top: 1px;
+        background-color: var(--border-color);
+        box-sizing: border-box;
+        margin: 0 1rem;
+
+        span {
+            display: flex;
+            width: 100%;
+            height: 4px;
+            background-color: var(--border-color-hover);
+            transform: scaleX(0);
+        }
+    }
+
+    @media only screen and (max-width: 1080px) {
+        input {
+            margin: 0;
+        }
+
+        .customBorder {
+            margin: 0;
+        }
+    }
+}
+
+.inputOptional {
+    @extend .input;
+    width: 80%;
+    height: max-content;
+
+    @media only screen and (max-width: 1080px) {
+        width: 60vw;
+        margin-top: 1rem;
+    }
+
+    textarea {
+        resize: vertical; /* user can resize vertically, but width is fixed */
+        border: none;
+        outline: none;
+        font-family: $font;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 1.2rem;
+        color: var(--highlight-text-color);
+        margin: 0 1rem;
+        background-color: var(--bg-nav);
+        border-radius: 15px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 0.5rem 1rem;
+
+        @media only screen and (max-width: 1080px) {
+            margin: 0 0;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+.inputTitle {
+    font-size: 1.25rem;
+    margin: 0;
+    font-family: $font;
+    color: var(--highlight-text-color);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    margin-left: 1rem !important;
+
+    @media only screen and (max-width: 1080px) {
+        margin-left: 0 !important;
+    }
+}
+
+.preSaleInfo {
+    @extend .optional;
+}
+
+.socialOptional {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    margin: 0.5rem 0;
+
+    @media only screen and (max-width: 1080px) {
+        padding: 0;
+    }
+
+    div {
+        margin: 0.5rem 0;
+    }
+
+    .row {
+        gap: 5rem;
+        @media only screen and (max-width: 1080px) {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    .link {
+        display: flex;
+        align-items: center;
+        margin: 1rem 0;
+
+        img {
+            height: 3.5rem;
+            width: 3.5rem;
+            border: 0;
+            padding: 0;
+            background-color: rgba(128, 128, 128, 0);
+            margin: 0 1.5rem;
+            margin-right: 0.75rem;
+
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+
+        .input {
+            width: 20rem;
+        }
+
+        @media only screen and (max-width: 1080px) {
+            img {
+                margin-left: 0;
+            }
+            .input {
+                width: 50vw;
+            }
+        }
+    }
+}
+
+.cancel {
+    &:hover {
+        color: rgb(255, 0, 0);
+        text-shadow: 0 0 25px red;
+        cursor: pointer;
+    }
+
+    &:active {
+        text-shadow: 0 0 25px rgb(71, 71, 71);
+        cursor: pointer;
+    }
+}
+
+.save {
+    display: flex;
+    width: 100%;
+
+    .btn, .btnRed {
+        width: 7rem;
+        margin: 1rem 1rem;
+        margin-left: auto;
+    }
+}
+
+@keyframes liquid {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes expand {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

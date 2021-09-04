@@ -32,7 +32,7 @@ $btnWidth :10rem;
         font-weight: 500;
         color: var(--highlight-text-color);
         @media only screen and (max-width: 910px) {
-            font-size: 1.8rem;
+            font-size: 1.3rem;
         }
     }
 
@@ -73,6 +73,11 @@ $btnWidth :10rem;
     @media only screen and (max-width: 910px) {
         margin-left: 2rem;
         margin-right: 2rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        margin-left: 1.2rem;
+        margin-right: 1.2rem;
     }
 }
 

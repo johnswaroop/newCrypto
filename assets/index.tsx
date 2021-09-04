@@ -41,3 +41,4 @@ export const minus = '/minus.svg';
 export const plus = '/plus.svg';
 export const loader = '/loader.gif';
 export const navBtn = '/navBtn.png';
+export const copy = '/copy.svg'

@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@import './../../scss/variables';
+@import "./../../scss/variables";
 
 $pop-up-width: 40rem;
 $pop-up-height: auto;
@@ -47,7 +47,7 @@ $pop-up-height: auto;
     padding-bottom: math.div($spacer, 3);
     box-sizing: border-box;
     align-items: center;
-    
+
     .icon {
         object-fit: contain;
         height: 90%;
@@ -119,6 +119,10 @@ $pop-up-height: auto;
     p {
         font-family: $font;
         color: var(--bw-text);
+
+        @media only screen and (max-width: 400px) {
+            font-size: 0.75rem;
+        }
     }
     &:hover {
         background-color: rgba(128, 128, 128, 0.123);
@@ -134,7 +138,7 @@ $pop-up-height: auto;
     padding: 0 $spacer;
     padding-bottom: math.div($spacer, 2.5);
     padding-top: math.div($spacer, 3);
-    
+
     span {
         font-family: $font;
         color: var(--text-color);
@@ -148,7 +152,7 @@ $pop-up-height: auto;
         border-radius: 30px;
         font-size: 1.2rem;
         color: var(--highlight-text-color);
-        padding: ($spacer*0.25) $spacer;
+        padding: ($spacer * 0.25) $spacer;
         box-shadow: 0 0 15px rgb(211, 211, 211);
         font-weight: 600;
     }
@@ -160,7 +164,7 @@ $pop-up-height: auto;
     &:hover {
         background-color: transparent;
     }
-    
+
     &:active {
         transform: translateY(5%);
     }

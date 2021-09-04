@@ -40,6 +40,9 @@
         font-weight: 600;
         margin-bottom: ($spacer*0.125);
         user-select: none;
+        @media only screen and (max-width: 300px) {
+            font-size: 0.75rem;
+        }
     }
 
     .value {
@@ -47,5 +50,8 @@
         color: var(--text-color);
         font-size: 1.2rem;
         font-weight: 400;
+        @media only screen and (max-width: 300px) {
+            font-size: 0.75rem;
+        }
     }
 }
