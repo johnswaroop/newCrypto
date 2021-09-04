@@ -364,11 +364,31 @@
 
 @media only screen and (max-width: 1400px) {
     .content {
-        width: 45rem;
+        width: 65rem;
     }
 
     .pageGrid {
-        width: 45rem;
+        width: 65rem;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .list {
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .content {
+        width: 40rem;
+        margin: 0 auto;
+    }
+
+    .pageGrid {
+        width: 40rem;
     }
 
     .pageGrid {
@@ -381,9 +401,38 @@
     }
 }
 
+
 @media only screen and (max-width: 900px) {
     .card {
         margin: 0 0;
+    }
+
+    .listHeader {
+        margin: 0;
+    }
+
+    .content {
+        width: 40rem;
+    }
+
+    .pageGrid {
+        width: 40rem;
+        margin: 1rem 0;
+    }
+
+    .pageGrid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .card {
+        margin: 0 0;
+    }
+
+    .listHeader {
+        margin: 0;
     }
 
     .content {

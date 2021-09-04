@@ -88,11 +88,17 @@ const Page: FC<pageProps> = ({ index }) => {
     let cards: any = [];
     let size: number = 8;
    
-    if (width < 900) {
+    if (width < 700) {
         size = 2;
     }
-    else if (width < 1400) {
+    else if (width < 900) {
         size = 4;
+    }
+    else if (width < 1200) {
+        size = 4;
+    }
+    else if (width < 1400) {
+        size = 6;
     }
 
     for (let i = 0; i < size; i++) {
